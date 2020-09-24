@@ -69,6 +69,7 @@
   - [x] [React Native Snap Carousel v3.9.1](https://github.com/archriss/react-native-snap-carousel)
   - [x] [Animatable v1.3.3](https://github.com/oblador/react-native-animatable)
   - [x] [React Native Vector Icons v7.1.0](https://github.com/oblador/react-native-vector-icons)
+  - [x] [@reduxjs/toolkit](https://redux-toolkit.js.org/introduction/quick-start)
 
 - [ ] API
   - [ ] [News API => Konten buat kamu](https://newsapi.org/)
