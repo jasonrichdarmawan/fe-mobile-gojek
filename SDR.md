@@ -1,13 +1,13 @@
 ### Software Development Requirements Analysis
 
-- [ ] Client's Environment
+- [x] Client's Environment
 
   ```
   Android API 25
   React Native 6.0.3
   ```
 
-  - [ ] Android
+  - [x] Android
 
     AndroidManifest.xml
 
@@ -58,18 +58,17 @@
           - [ ] Detail paket
           - [ ] Order
 
-- [ ] Library
+- [x] Library
 
-  - [ ] [Geolocation v2.0.2](https://github.com/react-native-community/react-native-geolocation)
-  - [ ] [react-native-maps v0.27.1](https://github.com/react-native-community/react-native-maps)
-  - [ ] [React Navigation v5.x](https://reactnavigation.org/versions)
-    - [ ] [@react-navigator/native](https://reactnavigation.org/docs/getting-started/ )
-    <!-- - [ ] [@react-navigation/stack](https://reactnavigation.org/docs/stack-navigator) -->
-    - [ ] [@react-navigation/material-top-tabs](https://reactnavigation.org/docs/material-top-tab-navigator/)
-    - [ ] [@react-navigation/bottom-tabs](https://reactnavigation.org/docs/bottom-tab-navigator/)
-  - [ ] [React Native Snap Carousel v3.9.1](https://github.com/archriss/react-native-snap-carousel)
-  - [ ] [Animatable v1.3.3](https://github.com/oblador/react-native-animatable)
-  - [ ] [React Native Vector Icons v7.1.0](https://github.com/oblador/react-native-vector-icons)
+  - [x] [Geolocation v2.0.2](https://github.com/react-native-community/react-native-geolocation)
+  - [x] [react-native-maps v0.27.1](https://github.com/react-native-community/react-native-maps)
+  - [x] [React Navigation v5.x](https://reactnavigation.org/versions)
+    - [x] [@react-navigator/native](https://reactnavigation.org/docs/getting-started/ )
+    - [x] [@react-navigation/material-top-tabs](https://reactnavigation.org/docs/material-top-tab-navigator/)
+    - [x] [@react-navigation/bottom-tabs](https://reactnavigation.org/docs/bottom-tab-navigator/)
+  - [x] [React Native Snap Carousel v3.9.1](https://github.com/archriss/react-native-snap-carousel)
+  - [x] [Animatable v1.3.3](https://github.com/oblador/react-native-animatable)
+  - [x] [React Native Vector Icons v7.1.0](https://github.com/oblador/react-native-vector-icons)
 
 - [ ] API
   - [ ] [News API => Konten buat kamu](https://newsapi.org/)
