@@ -51,7 +51,8 @@ function GoSendCurrentCity({title, goBack}) {
 
 function GoSendSearchLocation({navigate}) {
   return (
-    <View style={styles.border}>
+    // TODO: navigate()
+    <TouchableOpacity style={styles.border} onPress={() => navigate('null')}>
       <View style={{flexDirection: 'row'}}>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <View style={{marginRight: 16}}>
@@ -65,7 +66,7 @@ function GoSendSearchLocation({navigate}) {
           <Icon name="search" size={16} />
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
