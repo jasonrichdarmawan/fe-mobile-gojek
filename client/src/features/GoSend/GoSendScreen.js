@@ -3,15 +3,13 @@ import {
   Text,
   View,
   StyleSheet,
-  Button,
   TouchableOpacity,
   Image,
 } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 18,
-    marginHorizontal: 18,
+    margin: 18,
   },
   title: {
     fontWeight: 'bold',
@@ -51,12 +49,12 @@ function GoSendWithinCity() {
   );
 }
 
-function GoSendIntercity() {
+function GoSendIntercity({navigate}) {
   return (
     <TouchableOpacity
       style={{flexDirection: 'row'}}
       // TODO: navigate()
-      onPress={() => console.log('GoSend_Intercity')}>
+      onPress={() => navigate('GoSendDestinationCity')}>
       <View style={{marginHorizontal: 8}}>
         <Image source={require('../../../assets/GoSend_Intercity.jpg')} />
       </View>
@@ -71,20 +69,18 @@ function GoSendIntercity() {
 function GoSendNavigate({navigate}) {
   return (
     <View
-      style={[
-        styles.container,
-        {
-          padding: 16,
-          borderRadius: 6,
-          borderWidth: 1,
-          borderColor: 'silver',
-        },
-      ]}>
-      <GoSendWithinCity />
+      style={{
+        marginHorizontal: 18,
+        padding: 16,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: 'silver',
+      }}>
+      <GoSendWithinCity navigate={navigate} />
 
       <View style={styles.divider} />
 
-      <GoSendIntercity />
+      <GoSendIntercity navigate={navigate} />
     </View>
   );
 }
