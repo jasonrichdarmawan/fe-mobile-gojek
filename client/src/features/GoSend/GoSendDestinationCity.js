@@ -48,7 +48,7 @@ function Item({title, body, navigate}) {
     <TouchableOpacity
       style={[styles.container, {flexDirection: 'row'}]}
       // TODO: navigate()
-      onPress={() => navigate('null')}>
+      onPress={() => navigate('GoSendSendAPackageTo', {title})}>
       <View style={{marginRight: 16}}>
         <Icon name="city" size={24} />
       </View>
