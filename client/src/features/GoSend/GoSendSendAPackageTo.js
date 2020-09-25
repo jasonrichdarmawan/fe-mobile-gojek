@@ -52,7 +52,7 @@ function GoSendCurrentCity({title, goBack}) {
 function GoSendSearchLocation({navigate}) {
   return (
     // TODO: navigate()
-    <TouchableOpacity style={styles.border} onPress={() => navigate('null')}>
+    <TouchableOpacity style={styles.border} onPress={() => navigate('GoSendDestinationDetails')}>
       <View style={{flexDirection: 'row'}}>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <View style={{marginRight: 16}}>

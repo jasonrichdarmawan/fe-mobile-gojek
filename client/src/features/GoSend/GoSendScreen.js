@@ -30,14 +30,14 @@ function GoSendHeaderView() {
   );
 }
 
-function GoSendWithinCity() {
+function GoSendWithinCity({navigate}) {
   return (
     <TouchableOpacity
       style={{
         flexDirection: 'row',
       }}
       // TODO: navigate()
-      onPress={() => console.log('GoSend_Dalam_kota')}>
+      onPress={() => navigate('GoSendDestinationDetails')}>
       <View style={{marginHorizontal: 8}}>
         <Image source={require('../../../assets/GoSend_Dalam_kota.jpg')} />
       </View>
