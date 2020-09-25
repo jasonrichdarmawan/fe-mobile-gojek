@@ -38,7 +38,9 @@
 
 - [ ] Features
 
-  - [ ] Login
+  - [ ] Home
+  - [ ] Masuk
+  - [ ] Daftar
 
   - [ ] Top Navigation Bar:
     - [ ] Beranda
