@@ -8,6 +8,7 @@ import GoSendHeaderTitle from './src/components/GoSend/GoSendHeaderTitle';
 import GoSendDestinationCity from './src/features/GoSend/GoSendDestinationCity';
 import GoSendSendAPackageTo from './src/features/GoSend/GoSendSendAPackageTo';
 import GoSendDestinationDetails from './src/features/GoSend/GoSendDestinationDetails';
+import GoSendPickUpDetails from './src/features/GoSend/GoSendPickUpDetails';
 
 const nullComponent = ({navigation: {navigate}}) => {
   return <Button title="GoSend" onPress={() => navigate('GoSend')} />;
@@ -41,6 +42,11 @@ export default function App() {
         <Stack.Screen
           name="GoSendDestinationDetails"
           component={GoSendDestinationDetails}
+          options={{headerShown: false, title: ''}}
+        />
+        <Stack.Screen
+          name="GoSendPickUpDetails"
+          component={GoSendPickUpDetails}
           options={{headerShown: false, title: ''}}
         />
       </Stack.Navigator>

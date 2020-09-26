@@ -1,13 +1,13 @@
 import React from 'react';
 import GoSendDetails from '../../components/GoSend/GoSendDetails';
 
-export default function GoSendDestinationDetails({navigation}) {
+export default function GoSendPickUpDetails({navigation}) {
   return (
     <GoSendDetails
-      title="Detail pengiriman paket"
-      color="orange"
+      title="Detail pengambilan paket"
+      color="blue"
       navigation={navigation}
-      nextRoute="GoSendPickUpDetails"
+      nextRoute=""
     />
   );
 }
