@@ -12,6 +12,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import * as Animatable from 'react-native-animatable';
 import ButtonNavigate from "../ButtonNavigate";
 import GoBackButton from "../GoBackButton";
+import SearchLocationButton from "../SearchLocationButton";
 
 const styles = StyleSheet.create({
   container: {
@@ -51,16 +52,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 });
-
-const SearchLocationButton = () => (
-  <TouchableOpacity
-    style={[styles.button, {position: 'absolute', top: 20, right: 20}]}
-    // TODO: search location
-    onPress={() => console.log('Search Location')}>
-    {/* TODO: use gojek assets */}
-    <Icon name="search-location" size={18} color="blue" />
-  </TouchableOpacity>
-);
 
 const TextInputIcon = ({icon, placeholder}) => (
   <View style={[styles.input, {flexDirection: 'row'}]}>
