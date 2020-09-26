@@ -10,6 +10,7 @@ import {
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import * as Animatable from 'react-native-animatable';
+import ButtonNavigate from "../ButtonNavigate";
 
 const styles = StyleSheet.create({
   container: {
@@ -75,14 +76,6 @@ const TextInputIcon = ({icon, placeholder}) => (
     </View>
     <TextInput style={{flex: 1}} placeholder={placeholder} />
   </View>
-);
-
-const ButtonNavigate = ({text, navigateToNextRoute}) => (
-  <TouchableOpacity
-    style={styles.buttonNavigate}
-    onPress={() => navigateToNextRoute()}>
-    <Text style={[styles.title, {color: 'white'}]}>{text}</Text>
-  </TouchableOpacity>
 );
 
 const Address = ({color, subdistrict, formatted_address}) => (

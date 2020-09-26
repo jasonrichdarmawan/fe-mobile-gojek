@@ -7,7 +7,7 @@ export default function GoSendPickUpDetails({navigation}) {
       title="Detail pengambilan paket"
       color="blue"
       navigation={navigation}
-      nextRoute=""
+      nextRoute="GoSendPackageDetails"
     />
   );
 }
