@@ -10,6 +10,7 @@ import GoSendSendAPackageTo from './src/features/GoSend/GoSendSendAPackageTo';
 import GoSendDestinationDetails from './src/features/GoSend/GoSendDestinationDetails';
 import GoSendPickUpDetails from './src/features/GoSend/GoSendPickUpDetails';
 import GoSendPackageDetails from './src/features/GoSend/GoSendPackageDetails';
+import GoSendWithInCitySummary from './src/features/GoSend/GoSendWithInCitySummary';
 
 const nullComponent = ({navigation: {navigate}}) => {
   return <Button title="GoSend" onPress={() => navigate('GoSend')} />;
@@ -20,7 +21,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="GoSendWithInCitySummary">
         <Stack.Screen name="null" component={nullComponent} />
         <Stack.Screen
           name="GoSend"
@@ -53,6 +54,11 @@ export default function App() {
         <Stack.Screen
           name="GoSendPackageDetails"
           component={GoSendPackageDetails}
+          options={{headerShown: false, title: ''}}
+        />
+        <Stack.Screen
+          name="GoSendWithInCitySummary"
+          component={GoSendWithInCitySummary}
           options={{headerShown: false, title: ''}}
         />
       </Stack.Navigator>

@@ -6,7 +6,7 @@ import {TextInput} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import ButtonNavigate from '../../components/ButtonNavigate';
-import Ionicons from '../../components/Ionicons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import GoBackButton from '../../components/GoBackButton';
 
 const styles = StyleSheet.create({
@@ -87,8 +87,8 @@ export default function GoSendPackageDetails({navigation: {navigate, goBack}}) {
             <Text style={styles.title}>Detail paket</Text>
             <Text style={styles.title}>Deskripsi barang</Text>
             <TextInputIcon
-              icon="home"
-              placeholder="Detail lokasi (cth: patokan)"
+              icon="sticky-note"
+              placeholder="Contoh: Baju, buku, sepatu"
             />
           </View>
           <View style={styles.divider}></View>
@@ -118,7 +118,7 @@ export default function GoSendPackageDetails({navigation: {navigate, goBack}}) {
             </Text>
             <ButtonNavigate
               text="Lanjut"
-              navigateToNextRoute={() => navigate('null')}
+              navigateToNextRoute={() => navigate('GoSendWithInCitySummary')}
             />
           </View>
         </Animatable.View>
