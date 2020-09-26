@@ -24,7 +24,7 @@ export default function GoSendSearchLocation({
     // TODO: navigate()
     <TouchableOpacity
       style={styles.border}
-      onPress={() => navigate(navigateTo, {navigateTo: nextRoute, nextRoute})}>
+      onPress={() => navigate(navigateTo, {navigateTo: nextRoute})}>
       <View style={{flexDirection: 'row'}}>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <View style={{marginRight: 16}}>
