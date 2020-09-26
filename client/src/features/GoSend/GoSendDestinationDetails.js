@@ -5,6 +5,7 @@ import {
   StyleSheet,
   View,
   Text,
+  TextInput,
 } from 'react-native';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -32,13 +33,20 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: 'bold',
   },
-  button: {
-    borderStyle: 'solid',
-    borderColor: 'green',
+  input: {
     borderWidth: 1,
+    borderColor: 'silver',
     borderRadius: 6,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
+    marginVertical: 5,
+  },
+  buttonNavigate: {
+    borderWidth: 1,
+    borderColor: 'green',
+    borderRadius: 6,
+    backgroundColor: 'green',
+    padding: 16,
+    alignItems: 'center',
+    marginTop: 10,
   },
 });
 
@@ -60,31 +68,60 @@ const SearchLocationButton = () => (
   </TouchableOpacity>
 );
 
-const DestinationDetails = ({goBack, address}) => {
-  console.log(address);
+const TextInputIcon = ({icon, placeholder}) => (
+  <View style={[styles.input, {flexDirection: 'row'}]}>
+    <View style={{margin: 16}}>
+      <Icon name={icon} size={16} color="silver" />
+    </View>
+    <TextInput style={{flex: 1}} placeholder={placeholder} />
+  </View>
+);
+
+const ButtonNavigate = ({text}) => (
+  <TouchableOpacity
+    style={styles.buttonNavigate}
+    onPress={() => console.log('Lanjut')}>
+    <Text style={[styles.title, {color: 'white'}]}>{text}</Text>
+  </TouchableOpacity>
+);
+
+const Address = ({subdistrict, formatted_address}) => (
+  <View style={{marginTop: 20, marginBottom: 10, flexDirection: 'row'}}>
+    <View style={{marginRight: 16}}>
+      <Icon name="box" size={24} color="orange" />
+    </View>
+    <View style={{flex: 1}}>
+      <Text style={styles.title}>{subdistrict}</Text>
+      <Text ellipsizeMode="tail" numberOfLines={2}>
+        {formatted_address}
+      </Text>
+    </View>
+  </View>
+);
+
+const DestinationDetails = ({address: {subdistrict, formatted_address}}) => {
+  // console.log(address);
   return (
     <Animatable.View
       style={{
-        position: 'absolute',
-        top: Dimensions.get('window').height / 2,
         height: '50%',
         width: '100%',
         backgroundColor: 'white',
         padding: 20,
+        flex: 1,
       }}
       animation="fadeInUp">
       <Text style={styles.title}>Detail pengiriman paket</Text>
-      <View style={{marginTop: 20, flex: 1, flexDirection: 'row'}}>
-        <View style={{marginRight: 16}}>
-          <Icon name="box" size={24} color="orange" />
-        </View>
-        <View style={{flex: 1}}>
-          <Text style={styles.title}>{address.subdistrict}</Text>
-          <Text ellipsizeMode="tail" numberOfLines={2}>
-            {address.formatted_address}
-          </Text>
-        </View>
+      <Address
+        subdistrict={subdistrict}
+        formatted_address={formatted_address}
+      />
+      <View style={{flexDirection: 'column'}}>
+        <TextInputIcon icon="home" placeholder="Detail lokasi (cth: patokan)" />
+        <TextInputIcon icon="user" placeholder="Nama penerima" />
+        <TextInputIcon icon="whatsapp" placeholder="Nomor telepon" />
       </View>
+      <ButtonNavigate text="Lanjut" />
     </Animatable.View>
   );
 };
@@ -127,41 +164,46 @@ export default function GoSendDestinationDetails({navigation: {goBack}}) {
   };
 
   React.useEffect(() => {
-    // only fetch once for every instance of coordinate changes.
+    // only fetch once for every X times of coordinate changes after 1s.
     const timeout = setTimeout(() => {
       fetchCityName({
         latitude: coordinate.latitude,
         longtitude: coordinate.longitude,
       });
       // console.log('fetch')
-    }, 3000);
+    }, 1000);
     return () => clearTimeout(timeout);
   }, [coordinate]);
 
   // console.log('re-render')
 
   return (
-    <View style={{flex: 1, height: '100%', width: '100%'}}>
-      <View style={[styles.container, {height: '75%', width: '100%'}]}>
-        <MapView
-          provider={PROVIDER_GOOGLE} // remove if not using Google Maps
-          style={styles.map}
-          initialRegion={coordinate}
-          onRegionChange={handleRegionChange}
-        />
+    // TODO: fix bug keyboard view, note: original gojek is the same.
+    <View style={{flex: 1}}>
+      <View style={{flex: 1}}>
+        <View style={styles.container}>
+          <MapView
+            provider={PROVIDER_GOOGLE}
+            style={styles.map}
+            initialRegion={coordinate}
+            onRegionChangeComplete={handleRegionChange}
+          />
 
-        {/* TODO: use gojek assets */}
-        <Icon
-          name="map-marker-alt"
-          size={36}
-          color="orange"
-          style={{top: -20}}
-        />
+          {/* TODO: use gojek assets */}
+          <Icon
+            name="map-marker-alt"
+            size={36}
+            color="orange"
+            style={{top: -20}}
+          />
 
-        <GoBackButton goBack={goBack} />
-        <SearchLocationButton />
+          <GoBackButton goBack={goBack} />
+          <SearchLocationButton />
+        </View>
       </View>
-      <DestinationDetails goBack={goBack} address={address} />
+      <View style={{flex: 1}}>
+        <DestinationDetails address={address} />
+      </View>
     </View>
   );
 }
