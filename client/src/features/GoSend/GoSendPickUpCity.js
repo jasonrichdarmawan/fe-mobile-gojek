@@ -27,9 +27,9 @@ const data = [
   },
 ];
 
-export default function GoSendDestinationCity({navigation: {navigate}}) {
+export default function GoSendPickUpCity({navigation: {navigate}}) {
   const renderItem = ({item}) => (
-    <GoSendCityItem title={item.title} body={item.body} navigate={navigate} navigateTo="GoSendSendAPackageTo" />
+    <GoSendCityItem title={item.title} body={item.body} navigate={navigate} navigateTo="GoSendWhereToPickUp" />
   );
 
   return (

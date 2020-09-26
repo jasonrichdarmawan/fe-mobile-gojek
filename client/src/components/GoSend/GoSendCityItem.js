@@ -17,13 +17,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function GoSendCityItem({title, body, navigate, nextRoute}) {
+export default function GoSendCityItem({title, body, navigate, navigateTo, nextRoute}) {
   return (
     <TouchableOpacity
       style={[styles.container, {flexDirection: 'row'}]}
       // TODO: navigate()
       onPress={() =>
-        navigate(nextRoute, {title, nextRoute: 'GoSendPickUpCity'})
+        navigate(navigateTo, {title})
       }>
       <View style={{marginRight: 16}}>
         <Icon name="city" size={24} />

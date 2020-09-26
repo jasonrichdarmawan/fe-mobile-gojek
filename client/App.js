@@ -11,6 +11,8 @@ import GoSendDestinationDetails from './src/features/GoSend/GoSendDestinationDet
 import GoSendPickUpDetails from './src/features/GoSend/GoSendPickUpDetails';
 import GoSendPackageDetails from './src/features/GoSend/GoSendPackageDetails';
 import GoSendWithInCitySummary from './src/features/GoSend/GoSendWithInCitySummary';
+import GoSendPickUpCity from './src/features/GoSend/GoSendPickUpCity';
+import GoSendWhereToPickUp from './src/features/GoSend/GoSendWhereToPickUp';
 
 const nullComponent = ({navigation: {navigate}}) => {
   return <Button title="GoSend" onPress={() => navigate('GoSend')} />;
@@ -21,7 +23,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="GoSendWithInCitySummary">
+      <Stack.Navigator>
         <Stack.Screen name="null" component={nullComponent} />
         <Stack.Screen
           name="GoSend"
@@ -37,9 +39,19 @@ export default function App() {
           options={{title: 'Destination city'}}
         />
         <Stack.Screen
+          name="GoSendPickUpCity"
+          component={GoSendPickUpCity}
+          options={{title: 'Pick Up City'}}
+        />
+        <Stack.Screen
           name="GoSendSendAPackageTo"
           component={GoSendSendAPackageTo}
           options={{title: 'Send a package to...'}}
+        />
+        <Stack.Screen
+          name="GoSendWhereToPickUp"
+          component={GoSendWhereToPickUp}
+          options={{title: 'Paketnya diambil di mana?'}}
         />
         <Stack.Screen
           name="GoSendDestinationDetails"

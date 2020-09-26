@@ -10,9 +10,9 @@ import {
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import * as Animatable from 'react-native-animatable';
-import ButtonNavigate from "../ButtonNavigate";
-import GoBackButton from "../GoBackButton";
-import SearchLocationButton from "../SearchLocationButton";
+import ButtonNavigate from '../ButtonNavigate';
+import GoBackButton from '../GoBackButton';
+import SearchLocationButton from '../SearchLocationButton';
 
 const styles = StyleSheet.create({
   container: {
@@ -76,7 +76,12 @@ const Address = ({color, subdistrict, formatted_address}) => (
   </View>
 );
 
-const Details = ({navigateToNextRoute, title, color, address: {subdistrict, formatted_address}}) => {
+const Details = ({
+  navigateToNextRoute,
+  title,
+  color,
+  address: {subdistrict, formatted_address},
+}) => {
   // console.log(address);
   return (
     <Animatable.View
@@ -104,7 +109,13 @@ const Details = ({navigateToNextRoute, title, color, address: {subdistrict, form
   );
 };
 
-export default function GoSendDetails({nextRoute, title, color, navigation: {navigate, goBack}}) {
+export default function GoSendDetails({
+  navigateTo,
+  nextRoute,
+  title,
+  color,
+  navigation: {navigate, goBack},
+}) {
   const [coordinate, setCoordinate] = React.useState({
     latitude: -6.1754,
     longitude: 106.8272,
@@ -180,7 +191,12 @@ export default function GoSendDetails({nextRoute, title, color, navigation: {nav
         </View>
       </View>
       <View style={{flex: 1}}>
-        <Details address={address} title={title} color={color} navigateToNextRoute={() => navigate(nextRoute)} />
+        <Details
+          address={address}
+          title={title}
+          color={color}
+          navigateToNextRoute={() => navigate(navigateTo, {nextRoute})}
+        />
       </View>
     </View>
   );

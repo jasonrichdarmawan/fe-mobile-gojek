@@ -15,12 +15,16 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function GoSendSearchLocation({navigate, nextRoute}) {
+export default function GoSendSearchLocation({
+  navigate,
+  navigateTo,
+  nextRoute,
+}) {
   return (
     // TODO: navigate()
     <TouchableOpacity
       style={styles.border}
-      onPress={() => navigate('GoSendDestinationDetails', {nextRoute})}>
+      onPress={() => navigate(navigateTo, {navigateTo: nextRoute, nextRoute})}>
       <View style={{flexDirection: 'row'}}>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <View style={{marginRight: 16}}>

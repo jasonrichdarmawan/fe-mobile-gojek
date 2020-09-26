@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -30,14 +24,19 @@ function GoSendHeaderView() {
   );
 }
 
-function GoSendWithinCity({navigate}) {
+function GoSendWithInCity({navigate}) {
   return (
     <TouchableOpacity
       style={{
         flexDirection: 'row',
       }}
       // TODO: navigate()
-      onPress={() => navigate('GoSendDestinationDetails')}>
+      onPress={() =>
+        navigate('GoSendDestinationDetails', {
+          navigateTo: 'GoSendPickUpDetails',
+          nextRoute: 'GoSendPackageDetails',
+        })
+      }>
       <View style={{marginHorizontal: 8}}>
         <Image source={require('../../../assets/GoSend_Dalam_kota.jpg')} />
       </View>
@@ -76,7 +75,7 @@ function GoSendNavigate({navigate}) {
         borderWidth: 1,
         borderColor: 'silver',
       }}>
-      <GoSendWithinCity navigate={navigate} />
+      <GoSendWithInCity navigate={navigate} />
 
       <View style={styles.divider} />
 
