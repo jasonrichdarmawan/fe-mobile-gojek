@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import ButtonNavigate from '../../components/ButtonNavigate';
 import Ionicons from '../../components/Ionicons';
+import GoBackButton from '../../components/GoBackButton';
 
 const styles = StyleSheet.create({
   container: {
@@ -67,7 +68,7 @@ const RadioButton = ({textLeft, textRight, id, select, setSelect}) => (
   </TouchableOpacity>
 );
 
-export default function GoSendPackageDetails({navigation: {navigate}}) {
+export default function GoSendPackageDetails({navigation: {navigate, goBack}}) {
   const [select, setSelect] = React.useState(1);
 
   return (
@@ -78,6 +79,7 @@ export default function GoSendPackageDetails({navigation: {navigate}}) {
         // initialRegion={coordinate}
         // onRegionChangeComplete={handleRegionChange}
       />
+      <GoBackButton goBack={goBack} />
       <View style={{flex: 1}}>
         <View style={{flex: 1}} />
         <Animatable.View animation="fadeInUp" style={styles.details}>

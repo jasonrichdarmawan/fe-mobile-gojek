@@ -11,6 +11,7 @@ import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import * as Animatable from 'react-native-animatable';
 import ButtonNavigate from "../ButtonNavigate";
+import GoBackButton from "../GoBackButton";
 
 const styles = StyleSheet.create({
   container: {
@@ -50,14 +51,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 });
-
-const GoBackButton = ({goBack}) => (
-  <TouchableOpacity
-    style={[styles.button, {position: 'absolute', top: 20, left: 20}]}
-    onPress={() => goBack()}>
-    <Icon name="arrow-left" size={18} color="black" />
-  </TouchableOpacity>
-);
 
 const SearchLocationButton = () => (
   <TouchableOpacity
