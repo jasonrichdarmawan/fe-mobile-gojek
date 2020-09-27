@@ -26,6 +26,8 @@ import GoSendWhereToPickUp from '../features/GoSend/GoSendWhereToPickUp';
 import GoSendPackageSize from '../features/GoSend/GoSendPackageSize';
 import GoSendInterCityPackageDetails from '../features/GoSend/GoSendInterCityPackageDetails';
 import GoSendInterCitySummary from '../features/GoSend/GoSendInterCitySummary';
+import EditProfile from '../features/profile/edit';
+import TouchableButton from "../components/Profile/TouchableButton";
 
 const RootStack = createStackNavigator();
 
@@ -88,6 +90,16 @@ const Routes = () => (
       name="Summary"
       component={GoridecarSummary}
       options={{headerShown: false}}
+    />
+    {/* Profile */}
+    <RootStack.Screen
+      name="EditProfile"
+      component={EditProfile}
+      options={{
+        headerShown: true,
+        title: 'Edit Profile',
+        headerRight: () => <TouchableButton />,
+      }}
     />
     {/* GoSend */}
     <RootStack.Screen
