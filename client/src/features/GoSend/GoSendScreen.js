@@ -86,7 +86,7 @@ function GoSendNavigate({navigate}) {
 
 export default function GoSendScreen({navigation: {navigate}}) {
   return (
-    <View>
+    <View style={{backgroundColor: 'white', flex: 1}}>
       <GoSendHeaderView />
       <GoSendNavigate navigate={navigate} />
     </View>

@@ -11,8 +11,7 @@ const styles = StyleSheet.create({
     borderColor: 'silver',
     borderWidth: 1,
     borderRadius: 6,
-    paddingVertical: 16,
-    paddingHorizontal: 8,
+    padding: 10,
   },
 });
 
@@ -32,11 +31,11 @@ export default function GoSendSearchLocation({
           <View style={{marginRight: 16}}>
             <MaterialCommunityIcons name={name} size={24} color={color} />
           </View>
-          <View>
+          <View style={{alignSelf: 'center'}}>
             <Text>Search for a location</Text>
           </View>
         </View>
-        <View>
+        <View style={{alignSelf: 'center'}}>
           <Icon name="search" size={16} />
         </View>
       </View>

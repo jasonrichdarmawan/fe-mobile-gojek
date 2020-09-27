@@ -33,7 +33,7 @@ export default function GoSendDestinationCity({navigation: {navigate}}) {
   );
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
       <FlatList
         data={data}
         renderItem={renderItem}
