@@ -65,9 +65,10 @@
 - [ ] Navigator
 
   - [ ] StackNavigator `headerShown=false`
-    - [ ] Home
-    - [ ] Masuk
-    - [ ] Daftar
+
+    - [x] Home
+    - [x] Masuk
+    - [x] Daftar
     - [ ] GoSend `options={{ title: 'GoSend' }}`
       - [ ] KotaTujuan `options={{ title: 'Kota Tujuan' }}`
       - [ ] MauKirimPaketKemana `options={{ title: 'Mau kirim paket ke mana?' }}`
@@ -78,6 +79,7 @@
     - [ ] Ubah Profil `options={{ title: 'Ubah Profil' }}`
     - [ ] GoCar, GoRide `const { service } = route.params`
     - [ ] GoRide, GoCar reuseable component `options={{ headerLeft: null }}`
+
       - [ ] Where would you like to go?
       - [ ] Select via view map
       - [ ] Set pickup location / Set lokasi tujuan
