@@ -58,14 +58,14 @@
         - [ ] Select via view map
         - [ ] Set pickup location / Set lokasi tujuan
         - [ ] Order GoRide / GoCar
-    - [ ] GoSend
-      - [ ] Where do you want to send a package?
-      - [ ] Intercity
-      - [ ] GoSend reuseable components:
-        - [ ] Modal:
-          - [ ] Detail pengiriman paket / Detail pengambilan paket
-          - [ ] Detail paket
-          - [ ] Order
+    - [x] GoSend
+      - [x] Where do you want to send a package?
+      - [x] Intercity
+      - [x] GoSend reuseable components:
+        - [x] Modal:
+          - [x] Detail pengiriman paket / Detail pengambilan paket
+          - [x] Detail paket
+          - [x] Order
 
 - [ ] Navigator
 
