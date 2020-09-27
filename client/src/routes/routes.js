@@ -3,12 +3,9 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {TouchableOpacity, Text, View} from 'react-native';
 
-import LoginScreen from '../features/login/login';
-import OtpScreen from '../features/otp/otp';
-import Home from '../features/home/home';
-import RegisterScreen from '../features/register/register';
+import Home from '../features/Home/home';
 import TopNavigator from '../routes/topnavigator';
-import Beranda from '../features/beranda/beranda';
+import Beranda from '../features/Beranda/beranda';
 import Profile from '../features/profile/profile';
 import ContactScreen from '../features/chat/contact';
 import EditProfile from '../features/profile/edit';
@@ -25,6 +22,11 @@ import GosendDetail from '../features/gosend/detail';
 import GosendSummary from '../features/gosend/summary';
 import InnerCity from '../features/gosend/innercity';
 import InnerCityConfirm from '../features/gosend/confirm';
+import Login from '../features/Home/Login';
+import Register from '../features/Home/Register';
+import OTP from '../features/Home/OTP';
+import Konten from '../features/Beranda/Konten';
+import GoJekSplash from '../components/GoJekSplash';
 
 const RootStack = createStackNavigator();
 
@@ -32,23 +34,28 @@ const Routes = () => (
   <RootStack.Navigator>
     {/* Login Register */}
     <RootStack.Screen
+      name="initial"
+      component={GoJekSplash}
+      options={{headerShown: false}}
+    />
+    <RootStack.Screen
       name="Home"
       component={Home}
       options={{headerShown: false}}
     />
     <RootStack.Screen
       name="LoginScreen"
-      component={LoginScreen}
+      component={Login}
       options={{headerShown: false}}
     />
     <RootStack.Screen
       name="OtpScreen"
-      component={OtpScreen}
+      component={OTP}
       options={{headerShown: false}}
     />
     <RootStack.Screen
       name="RegisterScreen"
-      component={RegisterScreen}
+      component={Register}
       options={{headerShown: false}}
     />
     {/* Beranda */}
@@ -58,24 +65,9 @@ const Routes = () => (
       options={{headerShown: false}}
     />
     <RootStack.Screen
-      name="Beranda"
-      component={Beranda}
-      options={{headerShown: false}}
-    />
-    <RootStack.Screen
       name="NewsScreen"
-      component={NewsScreen}
-      options={{headerShown: true}}
-    />
-    <RootStack.Screen
-      name="Profile"
-      component={Profile}
-      options={{headerShown: false}}
-    />
-    <RootStack.Screen
-      name="Chat"
-      component={ContactScreen}
-      options={{headerShown: true}}
+      component={Konten}
+      options={{title: 'Gojek'}}
     />
     <RootStack.Screen
       name="EditProfile"
