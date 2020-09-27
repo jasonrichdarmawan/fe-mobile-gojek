@@ -13,6 +13,8 @@ import GoSendPackageDetails from './src/features/GoSend/GoSendPackageDetails';
 import GoSendWithInCitySummary from './src/features/GoSend/GoSendWithInCitySummary';
 import GoSendPickUpCity from './src/features/GoSend/GoSendPickUpCity';
 import GoSendWhereToPickUp from './src/features/GoSend/GoSendWhereToPickUp';
+import GoSendPackageSize from './src/features/GoSend/GoSendPackageSize';
+import GoSendInterCityPackageDetails from './src/features/GoSend/GoSendInterCityPackageDetails';
 
 const nullComponent = ({navigation: {navigate}}) => {
   return <Button title="GoSend" onPress={() => navigate('GoSend')} />;
@@ -61,17 +63,27 @@ export default function App() {
         <Stack.Screen
           name="GoSendPickUpDetails"
           component={GoSendPickUpDetails}
-          options={{headerShown: false, title: ''}}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="GoSendPackageDetails"
           component={GoSendPackageDetails}
-          options={{headerShown: false, title: ''}}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="GoSendWithInCitySummary"
           component={GoSendWithInCitySummary}
-          options={{headerShown: false, title: ''}}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="GoSendPackageSize"
+          component={GoSendPackageSize}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="GoSendInterCityPackageDetails"
+          component={GoSendInterCityPackageDetails}
+          options={{title: 'Rincian paket'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
