@@ -18,6 +18,9 @@
       android:value="YOUR_API_KEY"/>
 
     <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+    <!-- react-native-geolocation -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     ```
 
     root `build-gradle`

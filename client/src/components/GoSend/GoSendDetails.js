@@ -174,7 +174,7 @@ export default function GoSendDetails({
           <MapView
             provider={PROVIDER_GOOGLE}
             style={styles.map}
-            initialRegion={coordinate}
+            region={coordinate}
             onRegionChangeComplete={handleRegionChange}
           />
 
@@ -187,7 +187,7 @@ export default function GoSendDetails({
           />
 
           <GoBackButton goBack={goBack} />
-          <SearchLocationButton />
+          <SearchLocationButton setCoordinate={setCoordinate} />
         </View>
       </View>
       <View style={{flex: 1}}>
