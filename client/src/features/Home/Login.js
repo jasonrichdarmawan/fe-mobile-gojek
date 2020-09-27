@@ -24,7 +24,7 @@ export default function Login({navigation: {navigate}}) {
         <Text style={{alignSelf: 'center'}}>+62</Text>
         <TextInput style={[styles.title, {flex: 1, fontSize: 24}]} placeholder="12345678" onChangeText={text => setText(text)}/>
       </View>
-      <ButtonNavigateRound navigateToNextRoute={() => navigate('OTP', {text})} />
+      <ButtonNavigateRound navigateToNextRoute={() => navigate('OtpScreen', {text})} />
     </View>
   );
 }

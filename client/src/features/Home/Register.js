@@ -33,7 +33,7 @@ export default function Register({navigation: {navigate}}) {
       </View>
       <Text style={styles.label}>Kode referral</Text>
       <TextInput placeholder="e.g. G-000XXXX" />
-      <ButtonNavigateRound navigateToNextRoute={() => navigate('Login')} />
+      <ButtonNavigateRound navigateToNextRoute={() => navigate('LoginScreen')} />
     </View>
   );
 }

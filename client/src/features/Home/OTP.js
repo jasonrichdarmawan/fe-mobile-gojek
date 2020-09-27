@@ -41,7 +41,7 @@ export default function OTP({route: {params}, navigation: {navigate}}) {
           {Math.floor(timer / 60) + ':' + (timer % 60)}
         </Text>
       </View>
-      <ButtonNavigateRound navigateToNextRoute={() => navigate('Home')} />
+      <ButtonNavigateRound navigateToNextRoute={() => navigate('TopNavigator')} />
     </View>
   );
 }

@@ -47,11 +47,11 @@ export default function Home({navigation: {navigate}}) {
           justifyContent: 'center',
           marginVertical: 10,
         }}>
-        <TouchableOpacity style={styles.button} onPress={() => navigate('Login')}>
+        <TouchableOpacity style={styles.button} onPress={() => navigate('LoginScreen')}>
           <Text style={[styles.title, {color: 'white'}]}>Masuk</Text>
         </TouchableOpacity>
         <View style={{marginHorizontal: 10}} />
-        <TouchableOpacity style={styles.button} onPress={() => navigate('Register')}>
+        <TouchableOpacity style={styles.button} onPress={() => navigate('RegisterScreen')}>
           <Text style={[styles.title, {color: 'white'}]}>Daftar</Text>
         </TouchableOpacity>
       </View>
