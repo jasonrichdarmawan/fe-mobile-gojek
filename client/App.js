@@ -6,6 +6,7 @@ import Home from './src/features/Home/Home';
 import GoJekSplash from './src/components/GoJekSplash';
 import Register from './src/features/Home/Register';
 import Login from './src/features/Home/Login';
+import OTP from './src/features/Home/OTP';
 
 const nullComponent = () => null;
 
@@ -31,6 +32,7 @@ export default function App() {
           options={{title: ''}}
         />
         <Stack.Screen name="Login" component={Login} options={{title: ''}} />
+        <Stack.Screen name="OTP" component={OTP} options={{title: ''}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

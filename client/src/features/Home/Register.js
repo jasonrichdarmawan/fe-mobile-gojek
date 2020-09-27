@@ -29,7 +29,7 @@ export default function Register({navigation: {navigate}}) {
       <Text style={styles.label}>Nomor HP</Text>
       <View style={{flexDirection: 'row'}}>
         <Text style={{alignSelf: 'center'}}>+62</Text>
-        <TextInput placeholder="12345678" />
+        <TextInput style={{flex: 1}} placeholder="12345678" />
       </View>
       <Text style={styles.label}>Kode referral</Text>
       <TextInput placeholder="e.g. G-000XXXX" />
