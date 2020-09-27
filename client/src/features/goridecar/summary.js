@@ -48,7 +48,7 @@ const GoridecarSummary = ({route, navigation}) => {
         <View>
           <View style={{alignItems: 'center'}}>
             <TouchableOpacity
-              onPress={() => navigation.navigate('ChatScreen')}
+              onPress={() => navigation.navigate('TopNavigator')}
               style={{
                 borderWidth: 1,
                 borderColor: 'grey',
