@@ -13,6 +13,19 @@ import Register from '../features/Home/Register';
 import OTP from '../features/Home/OTP';
 import Konten from '../features/Beranda/Konten';
 import GoJekSplash from '../components/GoJekSplash';
+import GoSendScreen from '../features/GoSend/GoSendScreen';
+import GoSendHeaderTitle from '../components/GoSend/GoSendHeaderTitle';
+import GoSendDestinationCity from '../features/GoSend/GoSendDestinationCity';
+import GoSendSendAPackageTo from '../features/GoSend/GoSendSendAPackageTo';
+import GoSendDestinationDetails from '../features/GoSend/GoSendDestinationDetails';
+import GoSendPickUpDetails from '../features/GoSend/GoSendPickUpDetails';
+import GoSendPackageDetails from '../features/GoSend/GoSendPackageDetails';
+import GoSendWithInCitySummary from '../features/GoSend/GoSendWithInCitySummary';
+import GoSendPickUpCity from '../features/GoSend/GoSendPickUpCity';
+import GoSendWhereToPickUp from '../features/GoSend/GoSendWhereToPickUp';
+import GoSendPackageSize from '../features/GoSend/GoSendPackageSize';
+import GoSendInterCityPackageDetails from '../features/GoSend/GoSendInterCityPackageDetails';
+import GoSendInterCitySummary from '../features/GoSend/GoSendInterCitySummary';
 
 const RootStack = createStackNavigator();
 
@@ -77,6 +90,69 @@ const Routes = () => (
       options={{headerShown: false}}
     />
     {/* GoSend */}
+    <RootStack.Screen
+      name="GoSend"
+      component={GoSendScreen}
+      options={{
+        headerTitleContainerStyle: {left: 30},
+        headerTitle: () => <GoSendHeaderTitle />,
+      }}
+    />
+    <RootStack.Screen
+      name="GoSendDestinationCity"
+      component={GoSendDestinationCity}
+      options={{title: 'Destination city'}}
+    />
+    <RootStack.Screen
+      name="GoSendPickUpCity"
+      component={GoSendPickUpCity}
+      options={{title: 'Pick Up City'}}
+    />
+    <RootStack.Screen
+      name="GoSendSendAPackageTo"
+      component={GoSendSendAPackageTo}
+      options={{title: 'Send a package to...'}}
+    />
+    <RootStack.Screen
+      name="GoSendWhereToPickUp"
+      component={GoSendWhereToPickUp}
+      options={{title: 'Paketnya diambil di mana?'}}
+    />
+    <RootStack.Screen
+      name="GoSendDestinationDetails"
+      component={GoSendDestinationDetails}
+      options={{headerShown: false, title: ''}}
+    />
+    <RootStack.Screen
+      name="GoSendPickUpDetails"
+      component={GoSendPickUpDetails}
+      options={{headerShown: false}}
+    />
+    <RootStack.Screen
+      name="GoSendPackageDetails"
+      component={GoSendPackageDetails}
+      options={{headerShown: false}}
+    />
+    <RootStack.Screen
+      name="GoSendWithInCitySummary"
+      component={GoSendWithInCitySummary}
+      options={{headerShown: false}}
+    />
+    <RootStack.Screen
+      name="GoSendPackageSize"
+      component={GoSendPackageSize}
+      options={{headerShown: false}}
+    />
+    <RootStack.Screen
+      name="GoSendInterCityPackageDetails"
+      component={GoSendInterCityPackageDetails}
+      options={{title: 'Rincian paket'}}
+    />
+    <RootStack.Screen
+      name="GoSendInterCitySummary"
+      component={GoSendInterCitySummary}
+      options={{title: 'Detail order'}}
+    />
   </RootStack.Navigator>
 );
 

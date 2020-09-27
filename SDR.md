@@ -18,6 +18,9 @@
       android:value="YOUR_API_KEY"/>
 
     <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+    <!-- react-native-geolocation -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     ```
 
     root `build-gradle`
@@ -38,7 +41,9 @@
 
 - [ ] Features
 
-  - [ ] Login
+  - [ ] Home
+  - [ ] Masuk
+  - [ ] Daftar
 
   - [ ] Top Navigation Bar:
     - [ ] Beranda
@@ -53,14 +58,14 @@
         - [ ] Select via view map
         - [ ] Set pickup location / Set lokasi tujuan
         - [ ] Order GoRide / GoCar
-    - [ ] GoSend
-      - [ ] Where do you want to send a package?
-      - [ ] Intercity
-      - [ ] GoSend reuseable components:
-        - [ ] Modal:
-          - [ ] Detail pengiriman paket / Detail pengambilan paket
-          - [ ] Detail paket
-          - [ ] Order
+    - [x] GoSend
+      - [x] Where do you want to send a package?
+      - [x] Intercity
+      - [x] GoSend reuseable components:
+        - [x] Modal:
+          - [x] Detail pengiriman paket / Detail pengambilan paket
+          - [x] Detail paket
+          - [x] Order
 
 - [ ] Navigator
 

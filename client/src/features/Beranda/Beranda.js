@@ -147,7 +147,7 @@ export default function Beranda({navigation: {navigate}}) {
           <ButtonIconText
             icon={{name: 'box'}}
             text="GoSend"
-            onPress={() => console.log('GoSend')}
+            onPress={() => navigate('GoSend')}
           />
         </View>
       </View>
