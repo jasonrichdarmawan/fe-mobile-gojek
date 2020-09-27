@@ -12,7 +12,7 @@ const Beranda = ({navigation}) => {
         onPress={() =>
           navigation.navigate('GoRideCar', {
             HomeText1: 'Brrm! GoRide is back at your service',
-            HomeText2: `Must wear face masks.Personal helmets are  ${'\n'}advised`,
+            HomeText2: `Must wear face masks.Personal helmets are advised`,
             MarginLeftNext: 0,
             Logo: 1,
             Order: 'Order GoRide',
@@ -36,7 +36,7 @@ const Beranda = ({navigation}) => {
         onPress={() =>
           navigation.navigate('GoRideCar', {
             HomeText1: 'GoBluebird is for 2 only, and mask is...',
-            HomeText2: `Please prepare your won mask before taking${'\n'}a GoBluebird`,
+            HomeText2: `Please prepare your won mask before taking a GoBluebird`,
             MarginLeftNext: 0,
             Logo: 2,
             Order: 'Order GoBlueBird',

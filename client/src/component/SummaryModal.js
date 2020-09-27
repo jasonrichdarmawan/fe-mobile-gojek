@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const SummaryModal = (props) => (
+const SummaryModal = ({destination, pickup}) => (
   <View
     style={[
       styles.container,
@@ -40,7 +40,7 @@ const SummaryModal = (props) => (
         source={require('../img/pickup-logo-small.png')}
         style={{width: 20, height: 20, marginTop: 10}}
       />
-      <Text style={styles.textModal}>Jl.Dipati Ukur</Text>
+      <Text style={styles.textModal}>{destination}</Text>
     </View>
     <View style={styles.line} />
     <View style={styles.destination}>
@@ -48,7 +48,7 @@ const SummaryModal = (props) => (
         source={require('../img/destination-logo-small.png')}
         style={{width: 23, height: 23, marginTop: 6}}
       />
-      <Text style={styles.textModal}>Jl.Buah Batu</Text>
+      <Text style={styles.textModal}>{pickup}</Text>
     </View>
   </View>
 );

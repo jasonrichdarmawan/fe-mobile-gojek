@@ -47,7 +47,7 @@ const GoridecarHome = ({route, navigation}) => {
       <View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <BackIcon goBack={() => navigation.goBack()} />
-          <GpsIcon />
+          <GpsIcon setRegion={setRegion} />
         </View>
       </View>
       <Animatable.View style={styles.footer1} animation="fadeInUpBig">
@@ -72,7 +72,8 @@ const GoridecarHome = ({route, navigation}) => {
             )}
           </View>
 
-          <View style={{marginLeft: 10, paddingTop: 10, paddingRight: 5}}>
+          <View
+            style={{marginLeft: 10, paddingTop: 10, paddingRight: 5, flex: 1}}>
             <Text
               style={{
                 fontWeight: 'bold',
@@ -113,7 +114,7 @@ const GoridecarHome = ({route, navigation}) => {
                 borderWidth: 1,
                 borderColor: 'grey',
                 borderRadius: 50,
-                marginTop: 30,
+                marginTop: 20,
                 flexDirection: 'row',
               }}>
               <View style={{padding: 10}}>
@@ -127,20 +128,17 @@ const GoridecarHome = ({route, navigation}) => {
               </Text>
             </View>
           </TouchableOpacity>
-          <View style={{flexDirection: 'row', marginTop: 30}}>
+          <View style={{flexDirection: 'row', marginTop: 20}}>
             <Image
               source={require('../../img/thumb-icon.png')}
               style={{width: 100, height: 100}}
             />
-            <View style={{paddingTop: 10}}>
+            <View style={{paddingTop: 10, flex: 1}}>
               <Text style={{fontWeight: 'bold', fontSize: 19}}>
                 That's right, order Gojek now
               </Text>
               <Text style={{fontSize: 15, color: 'black'}}>
-                less stress on the road, more joy on the
-              </Text>
-              <Text style={{fontSize: 15, marginTop: 2, color: 'black'}}>
-                ride. Aaahhh
+                less stress on the road, more joy on the ride. Aaahhh
               </Text>
             </View>
           </View>
@@ -170,10 +168,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    paddingVertical: 40,
+    paddingVertical: 20,
     paddingHorizontal: 30,
   },
-
   title: {
     color: 'black',
     fontSize: 25,

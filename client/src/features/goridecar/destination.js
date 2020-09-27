@@ -13,6 +13,8 @@ import BackIcon from '../../component/BackIcon';
 
 import GpsIcon from '../../component/GpsIcon';
 
+import fetchCityName from "./fetchCityName";
+
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
@@ -23,6 +25,22 @@ const GoridecarDestination = ({route, navigation}) => {
     latitudeDelta: 0.015,
     longitudeDelta: 0.0121,
   });
+
+  const [address, setAddress] = React.useState({
+    subdistrict: '',
+    formatted_address: '',
+  });
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      fetchCityName({
+        latitude: region.latitude,
+        longtitude: region.longitude,
+        setAddress: setAddress
+      });
+    }, 3000);
+    return () => clearTimeout(timeout);
+  }, [region]);
 
   const {Order1} = route.params;
   console.log(Order1 + 'kedua');
@@ -42,23 +60,24 @@ const GoridecarDestination = ({route, navigation}) => {
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <BackIcon goBack={() => navigation.goBack()} />
-        <GpsIcon />
+        <GpsIcon setRegion={setRegion} />
       </View>
       <Animatable.View style={styles.footer1} animation="fadeInUpBig">
-        <View style={styles.footerContainer}>
+        <View>
           <View style={{marginTop: 20, marginLeft: 25}}>
             <Text style={{color: 'black', fontWeight: 'bold', fontSize: 20}}>
               Set Destination Location
             </Text>
           </View>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
-            <View style={{marginLeft: 25}}>
+          <View
+            style={{flexDirection: 'row', marginTop: 10, marginHorizontal: 20}}>
+            <View>
               <Image
                 source={require('../../img/destination-logo-small.png')}
                 style={{width: 45, height: 45}}
               />
             </View>
-            <View style={{marginLeft: 10}}>
+            <View style={{marginLeft: 10, flex: 1}}>
               <Text
                 style={{
                   color: 'black',
@@ -66,7 +85,7 @@ const GoridecarDestination = ({route, navigation}) => {
                   fontWeight: 'bold',
                   marginBottom: 7,
                 }}>
-                Jl. Dipati Ukur No.112-116
+                {address.subdistrict}
               </Text>
 
               <Text
@@ -75,25 +94,24 @@ const GoridecarDestination = ({route, navigation}) => {
                   fontSize: 13,
                   color: 'grey',
                 }}>
-                Jl. Dipati Ukur No.112-116, Lebakgede, Kecamatan Coblong, Kota
-                Bandung, Jawa Barat 40132
+                {address.formatted_address}
               </Text>
             </View>
           </View>
           <View style={{alignItems: 'center'}}>
             <TouchableOpacity
-              onPress={() => navigation.navigate('Pickup', {Order2: Order1})}
+              onPress={() => navigation.navigate('Pickup', {Order2: Order1, destination: address.subdistrict})}
               style={{
                 borderWidth: 1,
                 borderColor: 'grey',
                 borderRadius: 50,
-                marginTop: 30,
+                marginTop: 20,
                 padding: 15,
                 alignItems: 'center',
                 width: '90%',
                 backgroundColor: '#009714',
               }}>
-              <Text style={{color: '#fff', fontSize: 15}}>
+              <Text style={{color: '#fff', fontSize: 15, fontWeight: 'bold'}}>
                 Set destination location
               </Text>
             </TouchableOpacity>
@@ -119,7 +137,6 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
   },
-
   title: {
     color: 'black',
     fontSize: 25,

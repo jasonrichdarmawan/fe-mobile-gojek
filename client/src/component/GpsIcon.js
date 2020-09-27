@@ -1,6 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
 import IconMatic from 'react-native-vector-icons/MaterialIcons';
+import Geolocation from '@react-native-community/geolocation';
 
 const styles = StyleSheet.create({
   button: {
@@ -20,8 +21,20 @@ const styles = StyleSheet.create({
   },
 });
 
-const GpsIcon = () => (
-  <TouchableOpacity style={styles.button}>
+const GpsIcon = ({setRegion}) => (
+  <TouchableOpacity
+    style={styles.button}
+    onPress={() =>
+      Geolocation.getCurrentPosition((response) => {
+        const coords = response.coords;
+        setRegion({
+          longitude: coords.longitude,
+          latitude: coords.latitude,
+          latitudeDelta: 0.015,
+          longitudeDelta: 0.0121,
+        });
+      })
+    }>
     <IconMatic name="gps-fixed" size={18} color="black" />
   </TouchableOpacity>
 );

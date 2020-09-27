@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -7,15 +7,15 @@ import {
   StyleSheet,
   TextInput,
   Image,
-  SafeAreaView,
 } from 'react-native';
-import Geolocation from '@react-native-community/geolocation';
 
 import * as Animatable from 'react-native-animatable';
 import MapView, {Marker} from 'react-native-maps';
+import {add} from 'react-native-reanimated';
 import IconOct from 'react-native-vector-icons/Octicons';
 import BackIcon from '../../component/BackIcon';
 import GpsIcon from '../../component/GpsIcon';
+import fetchCityName from './fetchCityName';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -27,6 +27,24 @@ const GoridecarPickup = ({route, navigation}) => {
     latitudeDelta: 0.015,
     longitudeDelta: 0.0121,
   });
+
+  const [address, setAddress] = React.useState({
+    subdistrict: '',
+    formatted_address: '',
+  });
+
+  const {destination} = route.params;
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      fetchCityName({
+        latitude: region.latitude,
+        longtitude: region.longitude,
+        setAddress: setAddress,
+      });
+    }, 3000);
+    return () => clearTimeout(timeout);
+  }, [region]);
 
   const {Order2} = route.params;
   console.log(Order2 + 'ketiga');
@@ -43,23 +61,29 @@ const GoridecarPickup = ({route, navigation}) => {
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <BackIcon goBack={() => navigation.goBack()} />
-        <GpsIcon />
+        <GpsIcon setRegion={setRegion} />
       </View>
       <Animatable.View style={styles.footer1} animation="fadeInUpBig">
-        <View style={styles.footerContainer}>
+        <View>
           <View style={{marginTop: 20, marginLeft: 25}}>
             <Text style={{color: 'black', fontWeight: 'bold', fontSize: 20}}>
               Set Pickup Location
             </Text>
           </View>
-          <View style={{flexDirection: 'row', marginTop: 10, marginBottom: 40}}>
-            <View style={{marginLeft: 25}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 10,
+              marginBottom: 40,
+              marginHorizontal: 20,
+            }}>
+            <View>
               <Image
                 source={require('../../img/pickup-logo-small.png')}
                 style={{width: 50, height: 50}}
               />
             </View>
-            <View style={{marginLeft: 10}}>
+            <View style={{marginLeft: 10, flex: 1}}>
               <Text
                 style={{
                   color: 'black',
@@ -67,7 +91,7 @@ const GoridecarPickup = ({route, navigation}) => {
                   fontWeight: 'bold',
                   marginBottom: 7,
                 }}>
-                Jl. Buah Batu No.46
+                {address.subdistrict}
               </Text>
 
               <Text
@@ -78,8 +102,7 @@ const GoridecarPickup = ({route, navigation}) => {
                   fontSize: 13,
                   color: 'grey',
                 }}>
-                Jl. Dipati Ukur No.112-116, Lebakgede, Kecamatan Coblong, Kota
-                Bandung, Jawa Barat 40132
+                {address.formatted_address}
               </Text>
             </View>
           </View>
@@ -102,6 +125,8 @@ const GoridecarPickup = ({route, navigation}) => {
               onPress={() =>
                 navigation.navigate('Summary', {
                   Order3: Order2,
+                  destination: destination,
+                  pickup: address.subdistrict,
                 })
               }
               style={{
@@ -135,12 +160,11 @@ const styles = StyleSheet.create({
     flex: 3,
   },
   footer1: {
-    flex: 2.9,
+    flex: 3.2,
     backgroundColor: '#fff',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
   },
-
   title: {
     color: 'black',
     fontSize: 25,

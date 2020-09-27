@@ -24,7 +24,7 @@ const GoridecarSummary = ({route, navigation}) => {
     latitudeDelta: 0.015,
     longitudeDelta: 0.0121,
   });
-  const {Order3} = route.params;
+  const {Order3, destination, pickup} = route.params;
   console.log(Order3 + 'ketiga');
   return (
     <View style={styles.container}>
@@ -38,14 +38,14 @@ const GoridecarSummary = ({route, navigation}) => {
             // image={require('../../img/destination-logo-small.png')}
           />
         </MapView>
-        <SummaryModal />
+        <SummaryModal destination={destination} pickup={pickup} />
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <BackIcon goBack={() => navigation.goBack()} />
-        <GpsIcon />
+        <GpsIcon setRegion={setRegion} />
       </View>
       <Animatable.View style={styles.footer1} animation="fadeInUpBig">
-        <View style={styles.footerContainer}>
+        <View>
           <View style={{alignItems: 'center'}}>
             <TouchableOpacity
               onPress={() => navigation.navigate('ChatScreen')}
@@ -110,12 +110,12 @@ const styles = StyleSheet.create({
     flex: 3,
   },
   footer1: {
-    flex: 0.5,
+    // flex: 1,
+    paddingBottom: 20,
     backgroundColor: '#fff',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
   },
-
   title: {
     color: 'black',
     fontSize: 25,

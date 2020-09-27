@@ -27,6 +27,8 @@ const Profile = ({navigation}) => {
         </View>
       </View>
 
+      <View style={{flex: 1, justifyContent: 'flex-end'}}/>
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('Home')}>
@@ -76,7 +78,6 @@ const styles = StyleSheet.create({
   },
   editLogo: {
     marginVertical: 20,
-    marginLeft: 95,
   },
   button: {
     borderWidth: 1,
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '90%',
     backgroundColor: '#fff',
+    marginBottom: 20,
   },
   textButton: {
     color: 'red',
