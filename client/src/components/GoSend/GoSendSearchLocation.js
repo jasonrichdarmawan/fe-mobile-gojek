@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const styles = StyleSheet.create({
   border: {
@@ -16,6 +17,7 @@ const styles = StyleSheet.create({
 });
 
 export default function GoSendSearchLocation({
+  icon: {name, color},
   navigate,
   navigateTo,
   nextRoute,
@@ -28,7 +30,7 @@ export default function GoSendSearchLocation({
       <View style={{flexDirection: 'row'}}>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <View style={{marginRight: 16}}>
-            <Icon name="box" size={16} color="orange" />
+            <MaterialCommunityIcons name={name} size={24} color={color} />
           </View>
           <View>
             <Text>Search for a location</Text>

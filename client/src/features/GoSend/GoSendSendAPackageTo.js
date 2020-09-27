@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Image} from 'react-native';
-import GoSendCurrentCity from "../../components/GoSend/GoSendCurrentCity";
-import GoSendSearchLocation from "../../components/GoSend/GoSendSearchLocation";
+import GoSendCurrentCity from '../../components/GoSend/GoSendCurrentCity';
+import GoSendSearchLocation from '../../components/GoSend/GoSendSearchLocation';
 
 export default function GoSendSendAPackageTo({
   route: {params},
@@ -14,7 +14,12 @@ export default function GoSendSendAPackageTo({
         <GoSendCurrentCity title={title} goBack={goBack} />
       </View>
       <View style={{flex: 1}}>
-        <GoSendSearchLocation navigate={navigate} navigateTo="GoSendDestinationDetails" nextRoute="GoSendPickUpCity" />
+        <GoSendSearchLocation
+          icon={{name: 'arrow-down-box', color: 'orange'}}
+          navigate={navigate}
+          navigateTo="GoSendDestinationDetails"
+          nextRoute="GoSendPickUpCity"
+        />
       </View>
       <View
         style={{

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Image} from 'react-native';
-import GoSendCurrentCity from "../../components/GoSend/GoSendCurrentCity";
-import GoSendSearchLocation from "../../components/GoSend/GoSendSearchLocation";
+import GoSendCurrentCity from '../../components/GoSend/GoSendCurrentCity';
+import GoSendSearchLocation from '../../components/GoSend/GoSendSearchLocation';
 
 export default function GoSendWhereToPickUp({
   route,
@@ -14,7 +14,12 @@ export default function GoSendWhereToPickUp({
         <GoSendCurrentCity title={title} goBack={goBack} />
       </View>
       <View style={{flex: 1}}>
-        <GoSendSearchLocation navigate={navigate} navigateTo="GoSendPickUpDetails" nextRoute="null" />
+        <GoSendSearchLocation
+          navigate={navigate}
+          icon={{name: 'arrow-up-box', color: 'blue'}}
+          navigateTo="GoSendPickUpDetails"
+          nextRoute="GoSendPackageSize"
+        />
       </View>
       <View
         style={{
@@ -23,7 +28,7 @@ export default function GoSendWhereToPickUp({
           alignItems: 'center',
           margin: 18,
         }}>
-        <Image source={require('../../../assets/GoSend_SendAPackageTo.jpg')} />
+        <Image source={require('../../../assets/GoSend_WhereToPickUp.jpg')} />
       </View>
     </View>
   );
