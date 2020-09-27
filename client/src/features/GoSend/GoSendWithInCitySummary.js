@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ButtonNavigate from '../../components/ButtonNavigate';
+import GoSendDetailsSummary from "../../components/GoSend/GoSendDetailsSummary";
 
 const styles = StyleSheet.create({
   container: {
@@ -52,23 +53,6 @@ const ButtonIcon = ({id, select, setSelect, title, fineprint}) => (
   </TouchableOpacity>
 );
 
-const DetailsSummary = ({icon: {name, color}}) => (
-  <View style={{flexDirection: 'row'}}>
-    <MaterialCommunityIcons
-      name={name}
-      size={24}
-      color={color}
-      style={{marginRight: 16}}
-    />
-    <View>
-      <Text style={{fontSize: 12}}>Pengirim</Text>
-      <Text style={styles.title}>pengirim.nama</Text>
-      <Text>pengirim.telepon</Text>
-      <Text>pengirim.alamat</Text>
-    </View>
-  </View>
-);
-
 export default function GoSendWithInCitySummary({navigation: {navigate, goBack}}) {
   const [select, setSelect] = React.useState(1);
   return (
@@ -107,9 +91,9 @@ export default function GoSendWithInCitySummary({navigation: {navigate, goBack}}
           </View>
           <View style={styles.divider} />
           <View style={{margin: 20}}>
-            <DetailsSummary icon={{name: 'arrow-up-box', color: 'blue'}} />
+            <GoSendDetailsSummary icon={{name: 'arrow-up-box', color: 'blue'}} />
             <View style={{margin: 10}} />
-            <DetailsSummary icon={{name: 'arrow-down-box', color: 'orange'}} />
+            <GoSendDetailsSummary icon={{name: 'arrow-down-box', color: 'orange'}} />
           </View>
           <View style={styles.divider} />
           <View style={{margin: 20}}>

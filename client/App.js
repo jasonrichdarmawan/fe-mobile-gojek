@@ -15,6 +15,7 @@ import GoSendPickUpCity from './src/features/GoSend/GoSendPickUpCity';
 import GoSendWhereToPickUp from './src/features/GoSend/GoSendWhereToPickUp';
 import GoSendPackageSize from './src/features/GoSend/GoSendPackageSize';
 import GoSendInterCityPackageDetails from './src/features/GoSend/GoSendInterCityPackageDetails';
+import GoSendInterCitySummary from './src/features/GoSend/GoSendInterCitySummary';
 
 const nullComponent = ({navigation: {navigate}}) => {
   return <Button title="GoSend" onPress={() => navigate('GoSend')} />;
@@ -84,6 +85,11 @@ export default function App() {
           name="GoSendInterCityPackageDetails"
           component={GoSendInterCityPackageDetails}
           options={{title: 'Rincian paket'}}
+        />
+        <Stack.Screen
+          name="GoSendInterCitySummary"
+          component={GoSendInterCitySummary}
+          options={{title: 'Detail order'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

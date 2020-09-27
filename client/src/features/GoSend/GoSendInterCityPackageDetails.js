@@ -71,7 +71,9 @@ export default function GoSendInterCityPackageDetails({
       <View style={{margin: 20, flex: 1, justifyContent: 'flex-end'}}>
         <ButtonNavigate
           text="Lanjut"
-          navigateToNextRoute={() => navigate('null')}
+          navigateToNextRoute={() =>
+            navigate('GoSendInterCitySummary', {select: select})
+          }
         />
       </View>
     </View>
