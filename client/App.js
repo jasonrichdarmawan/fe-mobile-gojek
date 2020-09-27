@@ -7,6 +7,8 @@ import GoJekSplash from './src/components/GoJekSplash';
 import Register from './src/features/Home/Register';
 import Login from './src/features/Home/Login';
 import OTP from './src/features/Home/OTP';
+import Beranda from './src/features/Beranda/Beranda';
+import Konten from './src/features/Beranda/Konten';
 
 const nullComponent = () => null;
 
@@ -15,7 +17,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Beranda">
         <Stack.Screen
           name="initial"
           component={GoJekSplash}
@@ -33,6 +35,12 @@ export default function App() {
         />
         <Stack.Screen name="Login" component={Login} options={{title: ''}} />
         <Stack.Screen name="OTP" component={OTP} options={{title: ''}} />
+        <Stack.Screen
+          name="Beranda"
+          component={Beranda}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen name="Konten" component={Konten} options={{title: ''}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
