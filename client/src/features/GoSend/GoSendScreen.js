@@ -89,6 +89,11 @@ export default function GoSendScreen({navigation: {navigate}}) {
     <View style={{backgroundColor: 'white', flex: 1}}>
       <GoSendHeaderView />
       <GoSendNavigate navigate={navigate} />
+      <View style={{flex: 1}} />
+      <Image
+        source={require('../../../assets/GoSend_Screen.jpg')}
+        style={{width: '100%'}}
+      />
     </View>
   );
 }
