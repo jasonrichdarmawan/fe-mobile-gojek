@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import DataProfile from '../../component/DataProfile';
+import DataProfile from '../../components/DataProfile';
 
 const EditProfile = ({navigation}) => {
   return (

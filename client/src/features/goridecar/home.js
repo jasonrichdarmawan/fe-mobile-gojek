@@ -11,8 +11,8 @@ import * as Animatable from 'react-native-animatable';
 import MapView, {Marker} from 'react-native-maps';
 
 import IconMatIc from 'react-native-vector-icons/MaterialIcons';
-import BackIcon from '../../component/BackIcon';
-import GpsIcon from '../../component/GpsIcon';
+import BackIcon from '../../components/BackIcon';
+import GpsIcon from '../../components/GpsIcon';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;

@@ -10,9 +10,9 @@ import {
 import * as Animatable from 'react-native-animatable';
 import MapView, {Marker} from 'react-native-maps';
 import IconMatIc from 'react-native-vector-icons/MaterialIcons';
-import BackIcon from '../../component/BackIcon';
-import GpsIcon from '../../component/GpsIcon';
-import SummaryModal from '../../component/SummaryModal';
+import BackIcon from '../../components/BackIcon';
+import GpsIcon from '../../components/GpsIcon';
+import SummaryModal from '../../components/SummaryModal';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;

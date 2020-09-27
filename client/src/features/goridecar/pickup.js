@@ -11,10 +11,9 @@ import {
 
 import * as Animatable from 'react-native-animatable';
 import MapView, {Marker} from 'react-native-maps';
-import {add} from 'react-native-reanimated';
 import IconOct from 'react-native-vector-icons/Octicons';
-import BackIcon from '../../component/BackIcon';
-import GpsIcon from '../../component/GpsIcon';
+import BackIcon from '../../components/BackIcon';
+import GpsIcon from '../../components/GpsIcon';
 import fetchCityName from './fetchCityName';
 
 const width = Dimensions.get('window').width;

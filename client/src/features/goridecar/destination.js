@@ -9,9 +9,9 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import MapView, {Marker} from 'react-native-maps';
-import BackIcon from '../../component/BackIcon';
+import BackIcon from '../../components/BackIcon';
 
-import GpsIcon from '../../component/GpsIcon';
+import GpsIcon from '../../components/GpsIcon';
 
 import fetchCityName from "./fetchCityName";
 
